@@ -31,7 +31,7 @@ public enum UserType {
 	public static Map<Integer, String> getUserTypeMap() {
 		Map<Integer, String> map = new HashMap<>();
 		for (UserType type : UserType.values()) {
-			map.put(type.getIntValue(), type.toString());
+			map.put(type.intValue, type.toString());
 		}
 		return map;
 	}
