@@ -1,0 +1,4 @@
+29 8 2015 20:54:30,297 INFO  ~ Starting /Users/watanabetomoyuki/Desktop/Memorandum/.
+29 8 2015 20:54:30,888 WARN  ~ You're running Play! in DEV mode
+29 8 2015 20:54:31,624 INFO  ~ Connected to jdbc:mysql://localhost:3306/db11
+29 8 2015 20:54:32,171 INFO  ~ Application 'Memorandum' is now started !

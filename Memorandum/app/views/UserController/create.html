@@ -1,0 +1,34 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+<h1 class = "page-header">ユーザ追加</h1>
+
+#{form @UserController.insert(), method:'POST', id:'userForm'}
+	
+	<div class = "form-group">
+		<label for = "name">お名前</label>
+		<input type = "text" class = "form-control" id = "name" name="name">
+	</div>
+		<div class = "form-group">
+		<label for = "password">パスワード</label>
+		<input type = "password" class = "form-control" id = "password" name="password">
+	</div>
+
+	<div class = "form-group">
+		
+		<label for = "userType">ユーザ区分</label>
+
+		<select class = "form-control" id = "userType">
+		<option></option>
+		#{list items: map, as: 'userType'}
+<option value = ${userType.key}>${userType.value}</option>
+		#{/list}
+		</select>
+
+	</div>
+
+	<button class="btn btn-default" data-bind="click: clear">クリア</button>
+	<button class = "btn btn-primary">送信</button>
+	#{/form} 
+	
+

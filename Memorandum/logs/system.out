@@ -1,0 +1,43 @@
+CompilerOracle: exclude jregex/Pretokenizer.next
+Listening for transport dt_socket at address: 8000
+21:08:54,917 INFO  ~ Starting /Users/watanabetomoyuki/Desktop/Memorandum
+21:08:55,339 WARN  ~ You're running Play! in DEV mode
+~
+~ Go to http://localhost:9000/@tests to run the tests
+~
+21:08:55,397 INFO  ~ Listening for HTTP on port 9000 (Waiting a first request to start) ...
+21:08:56,408 INFO  ~ Connected to jdbc:mysql://localhost:3306/db11
+21:08:56,999 ERROR ~ 
+
+@6n9h29pn7
+Internal Server Error (500) for request GET /@tests.list
+
+JPA error
+A JPA error occurred (Unable to build EntityManagerFactory): component property not found: id
+
+play.exceptions.JPAException: Unable to build EntityManagerFactory
+	at play.db.jpa.JPAPlugin.onApplicationStart(JPAPlugin.java:269)
+	at play.plugins.PluginCollection.onApplicationStart(PluginCollection.java:525)
+	at play.Play.start(Play.java:526)
+	at play.Play.detectChanges(Play.java:642)
+	at play.Invoker$Invocation.init(Invoker.java:198)
+	at Invocation.HTTP Request(Play!)
+Caused by: org.hibernate.MappingException: component property not found: id
+	at org.hibernate.mapping.Component.getProperty(Component.java:292)
+	at org.hibernate.cfg.AnnotationBinder.fillComponent(AnnotationBinder.java:2455)
+	at org.hibernate.cfg.AnnotationBinder.fillComponent(AnnotationBinder.java:2336)
+	at org.hibernate.cfg.AnnotationBinder.bindComponent(AnnotationBinder.java:2285)
+	at org.hibernate.cfg.AnnotationBinder.processElementAnnotations(AnnotationBinder.java:2021)
+	at org.hibernate.cfg.AnnotationBinder.processIdPropertiesIfNotAlready(AnnotationBinder.java:796)
+	at org.hibernate.cfg.AnnotationBinder.bindClass(AnnotationBinder.java:707)
+	at org.hibernate.cfg.Configuration$MetadataSourceQueue.processAnnotatedClassesQueue(Configuration.java:4035)
+	at org.hibernate.cfg.Configuration$MetadataSourceQueue.processMetadata(Configuration.java:3989)
+	at org.hibernate.cfg.Configuration.secondPassCompile(Configuration.java:1398)
+	at org.hibernate.cfg.Configuration.buildMappings(Configuration.java:1375)
+	at org.hibernate.ejb.Ejb3Configuration.buildMappings(Ejb3Configuration.java:1519)
+	at org.hibernate.ejb.EventListenerConfigurator.configure(EventListenerConfigurator.java:193)
+	at org.hibernate.ejb.Ejb3Configuration.configure(Ejb3Configuration.java:1100)
+	at org.hibernate.ejb.Ejb3Configuration.buildEntityManagerFactory(Ejb3Configuration.java:904)
+	at play.db.jpa.JPAPlugin.onApplicationStart(JPAPlugin.java:267)
+	... 5 more
+@KILLED
