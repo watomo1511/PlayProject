@@ -2,6 +2,7 @@ import static org.hamcrest.CoreMatchers.is;
 import models.accessUser.AccessUser;
 import models.accessUser.vo.Password;
 import models.accessUser.vo.UserName;
+import models.accessUser.vo.UserType;
 import models.chatBoard.ChatBoard;
 import models.chatBoard.vo.ChatContent;
 import models.memo.Memo;
@@ -40,9 +41,12 @@ public class ScenarioTest extends UnitTest {
 		Password password2 = new Password("BBB");
 		Password password3 = new Password("CCC");
 
-		AccessUser user1 = new AccessUser(userName1, password1).save();
-		AccessUser user2 = new AccessUser(userName2, password2).save();
-		AccessUser user3 = new AccessUser(userName3, password3).save();
+		AccessUser user1 = new AccessUser(userName1, password1,
+				UserType.開発.getIntValue()).save();
+		AccessUser user2 = new AccessUser(userName2, password2,
+				UserType.開発.getIntValue()).save();
+		AccessUser user3 = new AccessUser(userName3, password3,
+				UserType.運用.getIntValue()).save();
 
 		assertThat(AccessUser.count(), is(userCount + 3));
 

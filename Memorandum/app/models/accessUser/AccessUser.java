@@ -20,9 +20,12 @@ public class AccessUser extends Model {
 	@Embedded
 	private Password password;
 
-	public AccessUser(UserName userName, Password password) {
+	private Integer userType;
+
+	public AccessUser(UserName userName, Password password, Integer userType) {
 		this.userName = userName;
 		this.password = password;
+		this.userType = userType;
 	}
 
 }

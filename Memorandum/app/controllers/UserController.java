@@ -16,7 +16,9 @@ public class UserController extends Controller {
 	}
 
 	public static void insert(String name, String password, String userType) {
-		new AccessUser(new UserName(name), new Password(password)).save();
+		Integer intValue = UserType.toEnum(userType).getIntValue();
+		new AccessUser(new UserName(name), new Password(password), intValue)
+				.save();
 		create();
 	}
 }

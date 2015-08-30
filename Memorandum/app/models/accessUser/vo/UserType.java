@@ -28,6 +28,15 @@ public enum UserType {
 		return null;
 	}
 
+	public static UserType toEnum(String str) {
+		for (UserType type : UserType.values()) {
+			if (str.equals(type.toString())) {
+				return type;
+			}
+		}
+		return null;
+	}
+
 	public static Map<Integer, String> getUserTypeMap() {
 		Map<Integer, String> map = new HashMap<>();
 		for (UserType type : UserType.values()) {
